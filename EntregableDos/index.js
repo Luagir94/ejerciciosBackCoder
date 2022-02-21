@@ -15,7 +15,6 @@ class Contenedor {
     save =  (obj) => {
         try {
             counter += 1
-            Object.assign( {id :  undefined})
             this.id = counter
             products.push(obj)
              fs.writeFileSync('./desafio.txt', `${JSON.stringify(products)}`)
@@ -58,10 +57,13 @@ productoDos.save(productoDos)
 const productoTres = new Contenedor('lapiz' , 20, 'www.dsfsd.com')
 productoTres.save(productoTres)
 
-
+//Obtengo todos los productos
+productoUno.getAll()
+//Obtengo el producto con ID 2
+productoUno.getByID(2)
+//Elimino el producto con ID 2
 productoUno.deleteById(2)
-
-
+//Metodo para borrar todo
 // productoUno.deleteAll()
 
 
