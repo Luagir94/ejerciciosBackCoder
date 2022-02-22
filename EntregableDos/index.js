@@ -5,16 +5,16 @@ const fs = require('fs')
 
 class Contenedor {
     constructor() {
-            this.id = undefined,
+        this.id = undefined,
             this.title = undefined,
             this.price = undefined,
             this.thumbnail = undefined
     }
 
     save = (title, price, thumbnail, obj) => {
+        try {
             if (fs.existsSync('./desafio.txt')) {
                 const data = JSON.parse(fs.readFileSync('./desafio.txt', 'utf-8'))
-
                 const lastProd = data[data.length - 1].id
                 this.title = title
                 this.price = price
@@ -33,7 +33,12 @@ class Contenedor {
                 array.push(obj)
                 fs.writeFileSync('./desafio.txt', `${JSON.stringify(array)}`)
             }
-            console.log('Archivo guardado!')
+
+        } catch (error) {
+            console.log(error)
+        }
+
+        console.log('Archivo guardado!')
     }
 
 
@@ -69,8 +74,8 @@ class Contenedor {
 
 // Instancio y guardo los productos nuevos
 const contenedor = new Contenedor()
-contenedor.save('cartuchera', 100, 'www.dsfsd.com',contenedor)
-contenedor.save('lapiz', 20, 'www.dsfsdsss.com',contenedor)
+contenedor.save('cartuchera', 100, 'www.dsfsd.com', contenedor)
+contenedor.save('lapiz', 20, 'www.dsfsdsss.com', contenedor)
 // contenedor.save('hoja', 5, 'www.dsfsd111.com',contenedor)
 //Obtengo todos los productos
 // productoUno.getAll()
