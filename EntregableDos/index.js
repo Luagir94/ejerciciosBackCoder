@@ -54,7 +54,9 @@ class Contenedor {
 
     deleteById = async (id) => {
         try {
-            const newArray = await products.filter(x => x.id !== id)
+            const data = fs.readFileSync('./desafio.txt', 'utf-8')
+            JSON.stringify(data)
+            const newArray = await data.filter(x => x.id !== id)
             await fs.promises.writeFile('./desafio.txt', `${JSON.stringify(newArray)}`)
             console.log('Producto eliminado', newArray)
         } catch (error) {
@@ -63,7 +65,6 @@ class Contenedor {
     }
 
     deleteAll = async () => {
-        const newArray = products.splice(0, products.length)
         await fs.promises.writeFile('./desafio.txt', ``)
         console.log('Productos eliminados')
     }
