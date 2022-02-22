@@ -20,9 +20,7 @@ class Contenedor {
                 this.price = price
                 this.thumbnail = thumbnail
                 this.id = lastProd + 1
-                console.log(data.length)
                 data.push(obj)
-                console.log(data, 'aca')
                 fs.writeFileSync('./desafio.txt', `${JSON.stringify(data)}`)
             } else {
                 const array = []
@@ -52,13 +50,14 @@ class Contenedor {
         console.log(data)
     }
 
-    deleteById = async (id) => {
+    deleteById =  (id) => {
         try {
             const data = fs.readFileSync('./desafio.txt', 'utf-8')
-            JSON.stringify(data)
-            const newArray = await data.filter(x => x.id !== id)
-            await fs.promises.writeFile('./desafio.txt', `${JSON.stringify(newArray)}`)
-            console.log('Producto eliminado', newArray)
+            const newArray = JSON.parse(data)
+             const filteredArray = newArray.filter(x => x.id !== id)
+            
+            fs.writeFileSync('./desafio.txt', `${JSON.stringify(filteredArray)}`)
+            console.log('Producto eliminado', filteredArray)
         } catch (error) {
             console.log(error)
         }
@@ -77,15 +76,15 @@ class Contenedor {
 const contenedor = new Contenedor()
 contenedor.save('cartuchera', 100, 'www.dsfsd.com', contenedor)
 contenedor.save('lapiz', 20, 'www.dsfsdsss.com', contenedor)
-// contenedor.save('hoja', 5, 'www.dsfsd111.com',contenedor)
+contenedor.save('hoja', 5, 'www.dsfsd111.com',contenedor)
 //Obtengo todos los productos
-// productoUno.getAll()
+// contenedor.getAll()
 //Obtengo el producto con ID 2
-// productoUno.getByID(2)
+// contenedor.getByID(2)
 //Elimino el producto con ID 2
-// productoUno.deleteById(2)
+contenedor.deleteById(2)
 //Metodo para borrar todo
-// productoUno.deleteAll()
+// contenedor.deleteAll()
 
 
 
