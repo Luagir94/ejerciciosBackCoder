@@ -1,1 +1,0 @@
-[{"id":1,"title":"cartuchera","price":100,"thumbnail":"www.dsfsd.com"},{"id":3,"title":"lapiz","price":20,"thumbnail":"www.dsfsd.com"}]
