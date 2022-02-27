@@ -55,7 +55,7 @@ class Contenedor {
     getRandom =() =>{ 
         const data = fs.readFileSync('./desafio.txt', 'utf-8')
          const dataObj = JSON.parse(data)
-        const randomP = dataObj[Math.round(Math.random() * dataObj.length)]
+        const randomP = dataObj[Math.round(Math.random() *( dataObj.length - 1 ))]
         
         return randomP
 }}
