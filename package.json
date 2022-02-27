@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Luagir94/ejerciciosBackCoder#readme",
   "dependencies": {
+    "express": "^4.17.3",
+    "moment": "^2.29.1",
     "nodemon": "^2.0.15"
   }
 }
