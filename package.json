@@ -1,0 +1,24 @@
+{
+  "name": "ejercicios-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luagir94/ejerciciosBackCoder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luagir94/ejerciciosBackCoder/issues"
+  },
+  "homepage": "https://github.com/Luagir94/ejerciciosBackCoder#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.15"
+  }
+}
